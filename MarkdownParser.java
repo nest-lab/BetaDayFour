@@ -31,26 +31,29 @@ public class MarkdownParser {
         if(words.startsWith("#")&&!words.startsWith("##")){
             System.out.println("<h1>"+words.replace("#","")+"</h1>");
         }
-        if(words.startsWith("##")&&!words.startsWith("###")){
+        else if(words.startsWith("##")&&!words.startsWith("###")){
             System.out.println("<h2>"+words.replace("##","")+"</h2>");
         }
-        if(words.startsWith("###")&&!words.startsWith("####")){
+        else if(words.startsWith("###")&&!words.startsWith("####")){
             System.out.println("<h3>"+words.replace("###","")+"</h3>");
         }
-        if(words.startsWith("####")&&!words.startsWith("#####")){
+        else if(words.startsWith("####")&&!words.startsWith("#####")){
             System.out.println("<h4>"+words.replace("####","")+"</h4>");
         }
-        if(words.startsWith("#####")&&!words.startsWith("######")){
+        else if(words.startsWith("#####")&&!words.startsWith("######")){
             System.out.println("<h5>"+words.replace("#####","")+"</h5>");
         }
-        if(words.startsWith("######")){
+        else if(words.startsWith("######")){
             System.out.println("<h6>"+words.replace("######","")+"</h6>");
         }
-        if(words.startsWith(" ")){
+        else if(words.startsWith(" ")){
             System.out.println("<p>"+words.substring(1,words.length())+"</p>");
         }
-        if(words.startsWith("*")){
+        else if(words.startsWith("*")){
             System.out.println("<li>"+words.replace("*","")+"</li>");
+        }
+        else{
+            System.out.println("unrecognized tag");
         }
         }while(!"-1".equals(words));
         
